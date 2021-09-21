@@ -1,8 +1,9 @@
 package com.template.repository.domain;
 
-import com.template.model.entity.User;
+import com.template.model.entity.UserEntity;
+import java.util.Optional;
 
 public interface UserRepository {
 
-    User getOneById(Integer id);
+    Optional<UserEntity> getOneById(Integer id);
 }

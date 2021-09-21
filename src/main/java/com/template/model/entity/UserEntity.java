@@ -6,15 +6,18 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("user")
+@Table("users")
 @Data
-public class User {
+public class UserEntity {
 
     @Id
     private Integer id;
 
     @Column("username")
     private String username;
+
+    @Column("email")
+    private String email;
 
     @Column("password")
     private String password;
