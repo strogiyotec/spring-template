@@ -7,13 +7,13 @@ import com.template.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
 @AllArgsConstructor
 public class DefaultUserService implements UserService {
 
     private final UserRepository repository;
 
     @Override
+    @Transactional(readOnly = true)
     public UserProfilePage userPageById(final Integer id) throws NotFoundException {
         return this.repository
             .getOneById(id)
@@ -27,5 +27,10 @@ public class DefaultUserService implements UserService {
                         )
                     )
             );
+    }
+
+    @Override
+    public void registerUser() {
+        throw new UnsupportedOperationException("#registerUser()");
     }
 }

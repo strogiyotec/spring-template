@@ -3,7 +3,6 @@ package com.template.service;
 import com.template.exc.NotFoundException;
 import com.template.page.UserProfilePage;
 
-//TODO: Implement
 public interface UserService {
 
     /**
@@ -13,4 +12,6 @@ public interface UserService {
      * @return UserPage
      */
     UserProfilePage userPageById(Integer id) throws NotFoundException;
+
+    void registerUser();
 }
