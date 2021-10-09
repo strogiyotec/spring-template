@@ -17,4 +17,9 @@ public class UserRepositoryImpl implements UserRepository {
     public Optional<UserEntity> getOneById(final Integer id) {
         return this.repository.findById(id);
     }
+
+    @Override
+    public UserEntity save(final UserEntity user) {
+        return this.repository.save(user);
+    }
 }

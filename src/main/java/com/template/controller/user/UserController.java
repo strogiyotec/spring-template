@@ -5,6 +5,7 @@ import com.template.controller.input.RegisterUserRequest;
 import com.template.controller.output.RegisterUserResponse;
 import com.template.page.UserProfilePage;
 import com.template.service.UserService;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +34,7 @@ public class UserController extends BaseController {
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<RegisterUserResponse> registerUser(@RequestBody final RegisterUserRequest registerUserRequest) {
-        return ResponseEntity.ok(new RegisterUserResponse());
+    public ResponseEntity<RegisterUserResponse> registerUser(@RequestBody @Valid final RegisterUserRequest request) {
+        return ResponseEntity.ok(this.userService.registerUser(request));
     }
 }

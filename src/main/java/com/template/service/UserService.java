@@ -1,5 +1,7 @@
 package com.template.service;
 
+import com.template.controller.input.RegisterUserRequest;
+import com.template.controller.output.RegisterUserResponse;
 import com.template.exc.NotFoundException;
 import com.template.page.UserProfilePage;
 
@@ -13,5 +15,5 @@ public interface UserService {
      */
     UserProfilePage userPageById(Integer id) throws NotFoundException;
 
-    void registerUser();
+    RegisterUserResponse registerUser(RegisterUserRequest request);
 }
